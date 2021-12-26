@@ -16,6 +16,12 @@ Depends on a full installation of ROS Kinetic.
   $ rosdep update
   $ source /opt/ros/kinetic/setup.bash
 ```
+
+#Dependencies e.g noetic
+```
+sudo apt-get install ros-noetic-joy ros-noetic-octomap-ros python3-wstool python3-catkin-tools
+
+```
 * Initialize catkin workspace:
 ```sh
   $ mkdir -p ~/catkin_ws/src
