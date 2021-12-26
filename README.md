@@ -22,6 +22,9 @@ Depends on a full installation of ROS Kinetic.
 sudo apt-get install ros-noetic-joy ros-noetic-octomap-ros python3-wstool python3-catkin-tools
 
 ```
+```
+change to find_package(OpenCV 4 REQUIRED) in cmakelists
+```
 * Initialize catkin workspace:
 ```sh
   $ mkdir -p ~/catkin_ws/src
