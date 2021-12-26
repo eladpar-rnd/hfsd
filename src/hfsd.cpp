@@ -26,7 +26,7 @@ pubHandler::pubHandler(ros::NodeHandle & n, const std::string & s, int bufSize){
 	n.param("arrowHeadLength", _arrowHeadLength, 0.1);
 	n.param("markerMag", _relativeMagnitude, 2.0);
 	n.param("markerSkip", _markerSkip, 0);
-        n.param("hfsd_map_frame", _hfsdMapFrame, std::string("hfsd_map"));
+        n.param("hfsd_map_frame", _hfsdMapFrame, std::string("map"));
 	//_tfListener=new tf2_ros::TransformListener(_tfBuffer);
 	if(n.getParam("HREZ", _AzRez)){
 		ROS_INFO("HORIZONTAL RESOLUTION SET CORRECTLY");

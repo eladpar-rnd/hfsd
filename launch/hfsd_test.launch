@@ -8,9 +8,11 @@
   <node pkg="tf2_ros" type="static_transform_publisher" name="velodyne_to_base_broadcaster" args="0 0 0 0 0 0 1 $(arg base_link) velodyne" />
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_map_broadcaster" args="0 0 0 0 0 0 1 map $(arg base_link)" />
 
+
   <node name="cloudTransformer" pkg="hfsd" type="cloudTransformer" output="screen">
      <param name="base_frame" value="$(arg base_link)" />
      <remap from="/cloudTransformer/inputcloud" to="/pico_flexx/points_reduced"/>
+     <remap from="/velodyne_points" to ="/pico_flexx/points_reduced"/>
   </node>
   <node name="hfsd" pkg="hfsd" type="hfsd_node" output="screen">
      <param name="markerSkip" value="15" type="int"/>
@@ -64,8 +66,8 @@
      <remap from="/hfsd/odometry_input" to="/rovio/odometry"/>
   </node>  
   
-  <group if="$(arg rviz)">
+  <!--<group if="$(arg rviz)">
     <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args=" -d $(find hfsd)/rviz_config/hfsd_test.rviz" />
-  </group>
+  </group>-->
   
 </launch>
